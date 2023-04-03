@@ -29,7 +29,7 @@ def custom_openapi():
         return app.openapi_schema
     openapi_schema = get_openapi(
         title="Strawberry Microservice",
-        version="0.1.0",
+        version="0.5.0",
         description=DESCRIPTION,
         routes=app.routes,
     )
@@ -56,7 +56,7 @@ async def add_group(data: AddGroupModel):
     texts = data.texts
     logging.info(f"Adding group {group_id}")
     if len(texts) == 0:
-            raise ValueError("Empty texts (who cares)")
+        raise ValueError("Empty texts (who cares)")
     return ResponseModel(result="OK")
 
 
